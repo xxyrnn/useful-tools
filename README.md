@@ -16,8 +16,8 @@ Rename all files in the current directory at once changing every occurrence of
 
 Examples:
 
-- change every occurrence of "wrong" (e.g. `test_file_wrong.txt`) in filenames
-    to "right" (e.g. `test_file_right.txt`)
+- change every occurrence of "wrong" (e.g. `file_wrong.txt`) in filenames to
+    "right" (e.g. `file_right.txt`)
     ```bash
     python3 batch_rename.py "wrong" "right"
     ```
