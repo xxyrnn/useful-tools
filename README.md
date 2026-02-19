@@ -18,7 +18,7 @@ Rename all files in the current directory at once changing every occurrence of
 
 ### Examples
 
-- change every occurrence of "wrong" (e.g. `file_wrong.txt`) in filenames to
+- Change every occurrence of "wrong" (e.g. `file_wrong.txt`) in filenames to
     "right" (e.g. `file_right.txt`)
 
     ```bash
@@ -26,4 +26,29 @@ Rename all files in the current directory at once changing every occurrence of
     ```
 
 ### TODO
+
 - add "case insensitive search" flag
+
+---
+
+## secret_gen.py
+
+Generate random, cryptographically secure passwords and PINs
+
+### Usage
+
+`python3 secret_gen.py <PASS|PIN> <length>`
+
+### Examples
+
+- Generate a 20-character-long password
+
+    ```bash
+    python3 secret_gen.py PASS 20
+    ```
+
+- Generate a 6-digit-long PIN
+
+    ```bash
+    python3 secret_gen.py PIN 6
+    ```
