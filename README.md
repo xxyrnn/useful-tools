@@ -70,6 +70,11 @@ Options:
 - `-c`: maximum number of files to find
 - `-r`: search all the subdirectories of the specified path
 
+![NOTE]
+> `pattern` is parsed as a raw string, so characters like parenthesis, brackets
+> and `.*?` must be escaped (e.g. `\)`, `\.`) if you want them to be read as
+> normal symbols, otherwise they will be parsed as special flags
+
 ### Examples
 
 - Search in the Desktop folder for files containing a word of at least one lowercase
@@ -85,7 +90,7 @@ python3 refind.py "~/Desktop" "[a-z]+"
 python3 refind.py -r "./folder" "word"
 ```
 
-- Search recursively in `/` for maximum 10 files containing a three-digit number
+- Search recursively in the root folder for maximum 10 files containing a three-digit number
 
 ```bash
 python3 refind.py -r -c 10 "/" "\b[0-9]{3}\b"
