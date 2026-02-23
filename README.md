@@ -3,11 +3,13 @@
 A set of useful tools written in various languages to accelerate the workflow
 in both Windows and Linux
 
----
+## Index
 
-# Tools Description
+- [batch_rename](#batch_rename)
+- [secret_gen](#secret_gen)
+- [refind](#refind)
 
-## batch_rename.py
+## batch_rename
 
 Rename all files in the current directory at once changing every occurrence of
 `old` with `new`
@@ -18,12 +20,12 @@ Rename all files in the current directory at once changing every occurrence of
 
 ### Examples
 
-- Change every occurrence of "wrong" (e.g. `file_wrong.txt`) in filenames to
-    "right" (e.g. `file_right.txt`)
+- Change every occurrence of "wrong" in filenames (e.g. `file_wrong.txt`) to
+"right" (e.g. `file_right.txt`)
 
-    ```bash
-    python3 batch_rename.py "wrong" "right"
-    ```
+```bash
+python3 batch_rename.py "wrong" "right"
+```
 
 ### TODO
 
@@ -31,7 +33,7 @@ Rename all files in the current directory at once changing every occurrence of
 
 ---
 
-## secret_gen.py
+## secret_gen
 
 Generate random, cryptographically secure passwords and PINs
 
@@ -43,12 +45,48 @@ Generate random, cryptographically secure passwords and PINs
 
 - Generate a 20-character-long password
 
-    ```bash
-    python3 secret_gen.py PASS 20
-    ```
+```bash
+python3 secret_gen.py PASS 20
+```
 
 - Generate a 6-digit-long PIN
 
-    ```bash
-    python3 secret_gen.py PIN 6
-    ```
+```bash
+python3 secret_gen.py PIN 6
+```
+
+---
+
+## refind
+
+Search for the given pattern in all files found within the given path and its subdirectories
+
+### Usage
+
+`python3 refind.py [OPTIONS] <path> <pattern>`
+
+Options:
+
+- `-c`: maximum number of files to find
+- `-r`: search all the subdirectories of the specified path
+
+### Examples
+
+- Search in the Desktop folder for files containing a word of at least one lowercase
+letter
+
+```bash
+python3 refind.py "~/Desktop" "[a-z]+"
+```
+
+- Search recursively in `./folder` for all the files containing the word "word"
+
+```bash
+python3 refind.py -r "./folder" "word"
+```
+
+- Search recursively in `/` for maximum 10 files containing a three-digit number
+
+```bash
+python3 refind.py -r -c 10 "/" "\b[0-9]{3}\b"
+```
