@@ -35,7 +35,7 @@ python3 batch_rename.py "wrong" "right"
 
 ## secret_gen
 
-Generate random, cryptographically secure passwords and PINs
+Generate random, cryptographically secure passwords and PIN codes
 
 ### Usage
 
