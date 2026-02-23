@@ -70,7 +70,7 @@ Options:
 - `-c`: maximum number of files to find
 - `-r`: search all the subdirectories of the specified path
 
-![NOTE]
+> [!NOTE]
 > `pattern` is parsed as a raw string, so characters like parenthesis, brackets
 > and `.*?` must be escaped (e.g. `\)`, `\.`) if you want them to be read as
 > normal symbols, otherwise they will be parsed as special flags
