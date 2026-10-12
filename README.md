@@ -8,6 +8,11 @@ in both Windows and Linux
 - [batch_rename](#batch_rename)
 - [secret_gen](#secret_gen)
 - [refind](#refind)
+- [inphone](#inphone)
+- [keylogger](#keylogger)
+- [crawler](#crawler)
+
+---
 
 ## batch_rename
 
@@ -95,3 +100,45 @@ python3 refind.py -r "./folder" "word"
 ```bash
 python3 refind.py -r -c 10 "/" "\b[0-9]{3}\b"
 ```
+
+---
+
+## inphone
+
+Lorem ipsum
+
+### Usage
+
+Lorem ipsum
+
+### Examples
+
+Lorem ipsum
+
+---
+
+## keylogger
+
+Lorem ipsum
+
+### Usage
+
+Lorem ipsum
+
+### Examples
+
+Lorem ipsum
+
+---
+
+## crawler
+
+Lorem ipsum
+
+### Usage
+
+Lorem ipsum
+
+### Examples
+
+Lorem ipsum
