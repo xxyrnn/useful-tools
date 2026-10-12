@@ -6,7 +6,7 @@ from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
 
-USER_AGENT = "XyrnCrawler/1.0"
+USER_AGENT = "CrawlTheNet/1.0"
 
 def crawl(start_url, max_pages=50, delay=1.0):
     domain = urlparse(start_url).netloc
@@ -55,8 +55,8 @@ def crawl(start_url, max_pages=50, delay=1.0):
     return results
 
 if __name__ == "__main__":
-    pages = crawl("http://web-16.challs.olicyber.it", 500, 0.5)
+    start_url = "https://www.example.com" # CHANGE THIS
+    pages = crawl(start_url)
 
     for url, h1 in pages.items():
-        if "flag" in h1:
-            print(url, "->", h1)
+        print(f"{url} -> {h1}")
