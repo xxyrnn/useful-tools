@@ -6,19 +6,20 @@ from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
 
+START_URL = "" # CHANGE THIS
 USER_AGENT = "CrawlTheNet/1.0"
 
-def crawl(start_url, max_pages=50, delay=1.0):
-    domain = urlparse(start_url).netloc
+def crawl(max_pages=50, delay=1.0):
+    domain = urlparse(START_URL).netloc
 
     rp = RobotFileParser()
-    rp.set_url(urljoin(start_url, "/robots.txt"))
+    rp.set_url(urljoin(START_URL, "/robots.txt"))
     rp.read()
 
     session = requests.Session()
     session.headers.update({ "User-Agent": USER_AGENT })
 
-    queue = deque([start_url])
+    queue = deque([START_URL])
     visited = set()
     results = {}
 
@@ -55,8 +56,7 @@ def crawl(start_url, max_pages=50, delay=1.0):
     return results
 
 if __name__ == "__main__":
-    start_url = "https://www.example.com" # CHANGE THIS
-    pages = crawl(start_url)
+    pages = crawl()
 
     for url, h1 in pages.items():
         print(f"{url} -> {h1}")
